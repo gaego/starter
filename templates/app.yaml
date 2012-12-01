@@ -1,0 +1,15 @@
+application: sapling-aego
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /(robots\.txt|favicon\.ico|apple-touch-icon.*)
+  static_files: static/root/\1
+  upload: static/img/root/.*
+
+- url: /static
+  static_dir: static/img
+
+- url: /.*
+  script: _go_app
