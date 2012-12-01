@@ -1,0 +1,27 @@
+[submodule "github.com/gaego/acl"]
+	path = github.com/gaego/acl
+	url = https://github.com/gaego/acl.git
+[submodule "github.com/gaego/auth"]
+	path = github.com/gaego/auth
+	url = https://github.com/gaego/auth.git
+[submodule "github.com/gaego/config"]
+	path = github.com/gaego/config
+	url = https://github.com/gaego/config.git
+[submodule "github.com/gaego/context"]
+	path = github.com/gaego/context
+	url = https://github.com/gaego/context.git
+[submodule "github.com/gaego/ds"]
+	path = github.com/gaego/ds
+	url = https://github.com/gaego/ds.git
+[submodule "github.com/gaego/mail"]
+	path = github.com/gaego/mail
+	url = https://github.com/gaego/mail.git
+[submodule "github.com/gaego/person"]
+	path = github.com/gaego/person
+	url = https://github.com/gaego/person.git
+[submodule "github.com/gaego/session"]
+	path = github.com/gaego/session
+	url = https://github.com/gaego/session.git
+[submodule "github.com/gaego/user"]
+	path = github.com/gaego/user
+	url = https://github.com/gaego/user.git
