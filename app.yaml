@@ -1,4 +1,4 @@
-application: sapling-aego
+application: gaego-starter
 version: 1
 runtime: go
 api_version: go1
@@ -8,8 +8,17 @@ handlers:
   static_files: static/root/\1
   upload: static/img/root/.*
 
-- url: /static
+- url: /css
+  static_dir: static/css
+
+- url: /font
+  static_dir: static/font
+
+- url: /img
   static_dir: static/img
+
+- url: /js
+  static_dir: static/js
 
 - url: /.*
   script: _go_app
