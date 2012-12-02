@@ -25,3 +25,15 @@
 [submodule "github.com/gaego/user"]
 	path = github.com/gaego/user
 	url = https://github.com/gaego/user.git
+[submodule "github.com/gorilla/sessions"]
+	path = github.com/gorilla/sessions
+	url = https://github.com/gorilla/sessions.git
+[submodule "github.com/gorilla/context"]
+	path = github.com/gorilla/context
+	url = https://github.com/gorilla/context.git
+[submodule "github.com/gorilla/securecookie"]
+	path = github.com/gorilla/securecookie
+	url = https://github.com/gorilla/securecookie.git
+[submodule "github.com/gorilla/schema"]
+	path = github.com/gorilla/schema
+	url = https://github.com/gorilla/schema.git
