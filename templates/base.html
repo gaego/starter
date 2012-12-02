@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>{{template "title" .}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{.App.Description}}">
+    <meta name="author" content="{{.App.Author}}">
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -26,20 +26,29 @@
 
   <body>
 
-    <div class="container" role="main">
+    <!-- Part 1: Wrap all page content here -->
+    <div id="wrap">
+      <div class="container" role="main">
 
-      <div class="page-header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/">Home</a></li>
-          <li><a href="/signup">Signup</a></li>
-          <li><a href="/login">Login</a></li>
-        </ul>
-        <h2 class="muted">{{.App.Title}}</h3>
+        <div class="page-header">
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+          <h2 class="muted">{{.App.Title}}</h3>
+        </div>
+        
+        {{template "content" .}}
+
+      </div> <!-- /container -->
+    </div> <!-- /wrap -->
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Created from <a href="https://github.com/gaego/starter">GAEGo Starter</a></a></p>
       </div>
-      
-      {{template "content" .}}
-
-    </div> <!-- /container -->
+    </div> <!-- /footer -->
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

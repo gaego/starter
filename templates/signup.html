@@ -1,16 +1,17 @@
 {{define "title"}}
-  Login
+  Signup
 {{end}}
 
 {{define "content"}}
     
   <form class="form-signin" action="/-/auth/password" method="POST" accept-charset="utf-8">
-    <h2 class="form-signin-heading">Please login</h2>
+    <h2 class="form-signin-heading">Please sign up</h2>
     <input name="Email" type="text" class="input-block-level" placeholder="Email address">
-    <input name="Password.New" type="password" class="input-block-level" placeholder="Password">
+    <input name="Password.Current" type="password" class="input-block-level" placeholder="Password">
     <label class="checkbox">
       <input type="checkbox" value="remember-me"> Remember me
     </label>
-    <button class="btn btn-large btn-primary" type="submit">Login</button>
+    <button class="btn btn-large btn-primary" type="submit">Sign up</button>
   </form>
 {{end}}
+
