@@ -4,9 +4,18 @@ import (
 	"github.com/gaego/auth"
 	"github.com/gaego/auth/appengine_openid"
 	"github.com/gaego/auth/password"
+	"github.com/gaego/context"
+	"github.com/gaego/user"
 	"html/template"
 	"net/http"
 )
+
+var App = map[string]string{
+	"Title":               "GAEGo Starter",
+	"Description":         "Google App Engine Starter Application Targeting the Go Runtime",
+	"Author":              "Scotch Media",
+	"GoogleAnalyticsCode": "",
+}
 
 func init() {
 	// Auth
@@ -24,14 +33,8 @@ func init() {
 	// Handlers
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/signup", signup)
+	http.HandleFunc("/account", user.LoginRequired(account))
 	http.HandleFunc("/", home)
-}
-
-var App = map[string]string{
-	"Title":               "GAEGo Starter",
-	"Description":         "Google App Engine Starter Application Targeting the Go Runtime",
-	"Author":              "Scotch Media",
-	"GoogleAnalyticsCode": "",
 }
 
 func tmplMap() map[string]interface{} {
@@ -41,6 +44,8 @@ func tmplMap() map[string]interface{} {
 }
 
 var (
+	accountTmpl = template.Must(template.ParseFiles("templates/base.html",
+		"templates/account.html"))
 	homeTmpl = template.Must(template.ParseFiles("templates/base.html",
 		"templates/home.html"))
 	loginTmpl = template.Must(template.ParseFiles("templates/base.html",
@@ -48,6 +53,19 @@ var (
 	signupTmpl = template.Must(template.ParseFiles("templates/base.html",
 		"templates/signup.html"))
 )
+
+func account(w http.ResponseWriter, r *http.Request) {
+	m := tmplMap()
+	u, err := user.Current(r)
+	c := context.NewContext(r)
+	c.Debugf("person: %v", u.Person)
+	if err == nil {
+		m["Person"] = u.Person
+	}
+	if err := accountTmpl.Execute(w, m); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
 
 func home(w http.ResponseWriter, r *http.Request) {
 	m := tmplMap()
