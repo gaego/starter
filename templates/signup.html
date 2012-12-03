@@ -3,16 +3,15 @@
 {{end}}
 
 {{define "content"}}
-    
   <form class="form-signin" action="/-/auth/password" method="POST" accept-charset="utf-8">
     <h2 class="form-signin-heading">Please sign up</h2>
     <input name="Name.GivenName" type="text" class="input-block-level" placeholder="First Name">
     <input name="Name.FamilyName" type="text" class="input-block-level" placeholder="Last Name">
     <input name="Email" type="text" class="input-block-level" placeholder="Email address">
-    <input name="Password.Current" type="password" class="input-block-level" placeholder="Password">
-    <label class="checkbox">
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
+    <input name="Password.New" type="password" class="input-block-level" placeholder="Password">
+    <!--<label class="checkbox">-->
+      <!--<input type="checkbox" value="RememberMe"> Remember me-->
+    <!--</label>-->
     <button class="btn btn-large btn-primary" type="submit">Sign up</button>
   </form>
 {{end}}

@@ -56,11 +56,11 @@ var (
 
 func account(w http.ResponseWriter, r *http.Request) {
 	m := tmplMap()
-	u, err := user.Current(r)
 	c := context.NewContext(r)
-	c.Debugf("person: %v", u.Person)
-	if err == nil {
-		m["Person"] = u.Person
+	if u, err := user.Current(r); err == nil {
+		m["User"] = u
+		c.Debugf("User: %v", u)
+		c.Debugf("User.Person: %v", u.Person)
 	}
 	if err := accountTmpl.Execute(w, m); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

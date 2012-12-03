@@ -4,6 +4,18 @@
 
 {{define "content"}}
   <h2>Account</h2>
-  {{.Person.Email}}    
+  <h4>Email Addresses</h4>
+  <ul>
+    {{range .User.Emails}}
+      <li>{{.}}</li>
+    {{end}}
+  </ul>
+  <h4>Profile</h4>
+  <dl>
+  	<dt>GivenName</dt>
+  	<dd>{{.User.Person.Name.GivenName}}</dd>
+  	<dt>FamilyName</dt>
+  	<dd>{{.User.Person.Name.FamilyName}}</dd>
+  </dl>
 {{end}}
 
