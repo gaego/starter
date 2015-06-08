@@ -12,6 +12,7 @@ git clone https://github.com/gaego/starter.git
 
 cd starter
 
+goapp get golang.org/x/crypto
 goapp get github.com/gaego/acl
 goapp get github.com/gaego/auth
 goapp get github.com/gaego/config
